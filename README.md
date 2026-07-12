@@ -69,7 +69,8 @@ Movie-Recommendation-System/
 ### Clone the repository
 
 ```bash
-git clone https://github.com/kuppannagarivishnukumarreddy6/Movie-Recommendation-System.git
+git clone https://github.com/kuppannagarivishnukumarreddy6-lgtm
+/Movie-Recommendation-System.git
 ```
 
 ### Go to the project folder
