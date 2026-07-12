@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="history-page">
+
+    <div class="history-container">
+
+        <h1>Search History</h1>
+
+        <p class="history-subtitle">
+            View your recently searched movies.
+        </p>
+
+        {% if history %}
+
+        <table class="history-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>#</th>
+
+                    <th>Movie Name</th>
+
+                    <th>Date & Time</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                {% for item in history %}
+
+                <tr>
+
+                    <td>{{ loop.index }}</td>
+
+                    <td>{{ item.movie }}</td>
+
+                    <td>{{ item.time }}</td>
+
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+        {% else %}
+
+        <div class="empty-history">
+
+            <i class="fas fa-history"></i>
+
+            <h2>No Search History</h2>
+
+            <p>
+                Search for movies to see your history here.
+            </p>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+{% endblock %}

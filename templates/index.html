@@ -1,0 +1,208 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="hero">
+
+    <div class="hero-overlay">
+
+        <div class="hero-content">
+
+            <h1>🎬 Movie Recommendation System</h1>
+
+            <p>
+                Discover movies you'll love using Artificial Intelligence and Machine Learning.
+            </p>
+
+            <form action="/recommend" method="POST">
+
+                <div class="search-box">
+
+                    <input
+                        type="text"
+                        name="movie"
+                        placeholder="Enter Movie Name (Example: Toy Story (1995))"
+                        value="{{ movie if movie else '' }}"
+                        required>
+
+                    <button type="submit">
+
+                        <i class="fas fa-search"></i>
+
+                        Recommend
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+{% if recommendations %}
+
+<section class="recommendation-section">
+
+    <h2>Recommended Movies</h2>
+
+    <p class="searched-movie">
+
+        Based on your search for
+
+        <strong>{{ movie }}</strong>
+
+    </p>
+
+    <div class="movie-grid">
+
+        {% for item in recommendations %}
+
+        <div class="movie-card">
+
+            <div class="movie-icon">
+
+                🎬
+
+            </div>
+
+            <h3>{{ item }}</h3>
+
+            <p>
+
+                Similar to
+
+                <strong>{{ movie }}</strong>
+
+            </p>
+
+            <a href="/movie/{{item}}" class="details-btn">
+                View Details
+            </a>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endif %}
+
+
+<section class="features">
+
+    <h2>Why Choose MovieAI?</h2>
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+
+            <i class="fas fa-film"></i>
+
+            <h3>Huge Movie Collection</h3>
+
+            <p>
+
+                Search from thousands of movies in the dataset.
+
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <i class="fas fa-robot"></i>
+
+            <h3>Machine Learning</h3>
+
+            <p>
+
+                Uses Content-Based Recommendation with Cosine Similarity.
+
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <i class="fas fa-bolt"></i>
+
+            <h3>Fast Recommendations</h3>
+
+            <p>
+
+                Get similar movies instantly.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="about-project">
+
+    <h2>About This Project</h2>
+
+    <p>
+
+        This Movie Recommendation System is developed using Python, Flask,
+        Pandas and Scikit-learn.
+
+        The recommendation engine analyzes movie genres and recommends
+        similar movies using Cosine Similarity.
+
+    </p>
+
+</section>
+
+
+<section class="how-it-works">
+
+    <h2>How It Works</h2>
+
+    <div class="steps">
+
+        <div class="step">
+
+            <span>1</span>
+
+            <h3>Search</h3>
+
+            <p>Enter your favourite movie.</p>
+
+        </div>
+
+        <div class="step">
+
+            <span>2</span>
+
+            <h3>Analyze</h3>
+
+            <p>The ML model compares movie genres.</p>
+
+        </div>
+
+        <div class="step">
+
+            <span>3</span>
+
+            <h3>Recommend</h3>
+
+            <p>Top similar movies are displayed instantly.</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

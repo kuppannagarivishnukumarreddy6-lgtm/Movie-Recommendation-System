@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="favorites-page">
+
+    <div class="favorites-container">
+
+        <h1>❤️ Favorite Movies</h1>
+
+        <p class="favorites-subtitle">
+            Your saved favorite movies will appear here.
+        </p>
+
+        {% if favorites %}
+
+        <div class="favorites-grid">
+
+            {% for movie in favorites %}
+
+            <div class="favorite-card">
+
+                <div class="favorite-icon">
+
+                    🎬
+
+                </div>
+
+                <h2>{{ movie.title }}</h2>
+
+                <p>
+                    Saved in your favorites.
+                </p>
+
+                <button class="remove-btn">
+
+                    Remove
+
+                </button>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        {% else %}
+
+        <div class="empty-favorites">
+
+            <i class="fas fa-heart"></i>
+
+            <h2>No Favorite Movies</h2>
+
+            <p>
+                Save your favorite movies to see them here.
+            </p>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+{% endblock %}
