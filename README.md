@@ -69,7 +69,7 @@ Movie-Recommendation-System/
 ### Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/Movie-Recommendation-System.git
+git clone https://github.com/kuppannagarivishnukumarreddy6/Movie-Recommendation-System.git
 ```
 
 ### Go to the project folder
@@ -134,11 +134,7 @@ Files used:
 
 ---
 
-## 📷 Screenshots
 
-(Add screenshots of your homepage and recommendation page here.)
-
----
 
 ## 👨‍💻 Author
 
